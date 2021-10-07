@@ -41,13 +41,12 @@ See: https://www.ncbi.nlm.nih.gov/books/NBK279675/
 
 Some useful flags:  
 | Flag      | Meaning |
-| --- | ----------- |
+| ---- | ------------- |
 | -outfmt 6   | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title        |
 | -task      | blastn (default), blastn-short, megablast, dc-megablast       |
 | -num_alignments X      | Only prints top X alignments       |
 | -evalue X      | Maximum e-value to return hits is X (default: 10, preferred: 1e-3 or more stringent)       |
-  
 
-
+&nbsp;  
 
 > Play around with these parameters for a few minutes, and use your command-line skills to parse the output. How many of your "crab" sequences do you think are really microsporidian parasite sequences?
