@@ -40,12 +40,12 @@ MANY flag options are available to change parameters of seach and output
 See: https://www.ncbi.nlm.nih.gov/books/NBK279675/
 
 Some useful flags:  
-| Flag      | Meaning |
+| Flag | Meaning |
 | ----- | ------------- |
-| -outfmt 6   | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title        |
-| -task      | blastn (default), blastn-short, megablast, dc-megablast       |
-| -num_alignments X      | Only prints top X alignments       |
-| -evalue X      | Maximum e-value to return hits is X (default: 10, preferred: 1e-3 or more stringent)       |
+| -outfmt 6 | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title |
+| -task | blastn (default), blastn-short, megablast, dc-megablast |
+| -num_alignments X | Only prints top X alignments |
+| -evalue X | Maximum e-value to return hits is X (default: 10, preferred: 1e-3 or more stringent) |
 
 &nbsp;  
 
