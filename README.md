@@ -44,8 +44,8 @@ Some useful flags:
 | ----- | ------------- |
 | -outfmt 6 | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title |
 | -task | blastn (default), blastn-short, megablast, dc-megablast |
-| -num_alignments X | Only prints top X alignments |
-| -evalue X | Maximum e-value to return hits is X (default: 10, preferred: 1e-3 or more stringent) |
+| -num_alignments | Only prints top X alignments |
+| -evalue | Maximum e-value to return hits (default: 10, preferred: 1e-3 or more stringent) |
 
 &nbsp;  
 
