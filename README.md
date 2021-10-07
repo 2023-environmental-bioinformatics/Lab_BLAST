@@ -36,14 +36,13 @@ blastn -db Hepatospora_eriocheir_genome.fasta -query Bt_multi_txm_10p.fasta -out
 
 This is a really basic alignment - there are tons of ways you can customize your similarity search. You can also use different types of blast - for example, we used `blastn` to align nucleotide to nucleotide, but we could also use `tblastx` to translate both reference and query before searching. If you had a protein database, you'd want to use the protein-based options like blast p (protein query - protein reference) or blastx (translated nucleotide query - protein reference).
 
-MANY flag options are available to change parameters of seach and output
+MANY flag options are available to change parameters of seach and output  
 See: https://www.ncbi.nlm.nih.gov/books/NBK279675/
 
-Some useful flags:
-	-outfmt 6	Creates tabular output file (can be further customized by changing number, etc.)
-			eg, -outfmt "6 std stitle" prints default fields plus full sequence title
-	-task		blastn (default), blastn-short, megablast, dc-megablast
-	-num_alignments Only prints top X alignments
-	-evalue		Maximum e-value to return hits (default: 10, preferred: 1e-3)
+Some useful flags:  
+-outfmt 6	Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title  
+-task		blastn (default), blastn-short, megablast, dc-megablast  
+-num_alignments Only prints top X alignments  
+-evalue		Maximum e-value to return hits (default: 10, preferred: 1e-3)
 
 > Play around with these parameters for a few minutes, and use your command-line skills to parse the output. How many of your "crab" sequences do you think are really microsporidian parasite sequences?
