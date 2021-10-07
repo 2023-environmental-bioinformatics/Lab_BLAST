@@ -41,7 +41,7 @@ See: https://www.ncbi.nlm.nih.gov/books/NBK279675/
 
 Some useful flags:  
 | Flag      | Meaning |
-| ---- | ------------- |
+| ----- | ------------- |
 | -outfmt 6   | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title        |
 | -task      | blastn (default), blastn-short, megablast, dc-megablast       |
 | -num_alignments X      | Only prints top X alignments       |
