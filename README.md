@@ -31,7 +31,7 @@ Check out the contents of your directory. What happened?
 
 Run blastn from the folder where you would like the output files to be generated.
 ```
-blastn -db Hepatospora_eriocheir_genome.fasta -query Bt_multi_txm_10p.fasta -out Bytho_vs_hepato.out
+blastn -db Hepatospora_eriocheir_genome.fasta -query Bythograea_thermydron_txm_env-bio.fasta -out Bytho_vs_hepato.out
 ```
 
 This is a really basic alignment - there are tons of ways you can customize your similarity search. You can also use different types of blast - for example, we used `blastn` to align nucleotide to nucleotide, but we could also use `tblastx` to translate both reference and query before searching, or `tblastn` to translate a nucleotide database for use with a protein query. If you had a protein database, you'd want to use the protein-based options like blastp (protein query - protein reference) or blastx (translated nucleotide query - protein reference).
