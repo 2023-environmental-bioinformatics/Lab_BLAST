@@ -1,20 +1,41 @@
 # Lab_BLAST
 
-BLAST is a many-splendored thing; it has a lovely online interface at GenBank, but it's also helpfully a command line program. If you want to do a quick check on a couple of sequences, online is great. But for a whole lot of BLASTing, you want `blast+` (command-line blast), which can be gloriously parallelized on the HPC.
+BLAST is a many-splendored thing; it has a lovely [online interface](https://blast.ncbi.nlm.nih.gov/Blast.cgi) at GenBank, but it's also helpfully a command line program. If you want to do a quick check on a couple of sequences, online is great. But for a whole lot of BLASTing, you want `blast+` (command-line blast), which can be gloriously parallelized on the HPC.
 
-## Set up conda environment
+## Set up conda environment to run blast using mamba
 
+*you can still use conda if you haven't installed mamba, but we have seen that mamba installations are much faster*
+*in order to create environments using mamba you need to activate you mamba environment first; how you do this?*
+
+Before starting the creation of the environment, **do not forget**:
+- Start your tmux
+- Navigate into your userspace inside the class folder
+- Activate mamba
+  
+
+  
 Get a fresh new conda environment set up for blasting:
 
 ```
-conda create --name blast
-conda activate blast
-conda install -c bioconda blast
+mamba create --name blast
+mamba activate blast
+mamba install -c bioconda blast
 ```
 
-Ultimately, when you blast anything you are searching a query sequence (stuff you want to know about) to a set of reference sequences (stuff you presumably already know). You can use almost any collection of sequences as a reference as long as they're in fasta format. Genome, transcriptome, proteins, you name it. If you want to go big (and your HPC admins are OK with this!) you can even download the **entire** non-redundant nt (DNA) or nr (protein) database from NCBI.
+Ultimately, when you blast anything you are searching a query sequence (stuff you want to know about) to a set of reference sequences (stuff you presumably already know). You can use almost any collection of sequences as a reference as long as they're in fasta format. Genome, transcriptome, proteins, you name it. If you want to go big (and your HPC admins are OK with this!) you can even download the **entire** non-redundant nt (DNA) or nr (protein) database from NCBI. You can find versions of these databases in a shared location `/vortexfs1/omics/data/blastdb/`
 
-For now, though, we are going to ask a pretty simple question: which of the genes in a _de novo_ crab transcriptome are likely to be from a common microparasite of crabs? In this repo, you'll find a semi-cleaned, downsampled _de novo_ transcriptome for the hydrothermal vent crab, _Bythograea thermydron_. I built this transcriptome using four tissue types from two individual crabs from the East Pacific Rise (9N). We don't know much about parasites at vents, but we know parasites are very very common in other ecosystems, so let's search our transcriptome for contigs matching a common haplosporidian parasite to see if we can find it in the depths.
+For now, though, we are going to ask a pretty simple question: which of the genes in a _de novo_ crab transcriptome are likely to be from a common microparasite of crabs? In this repo, you'll find a semi-cleaned, downsampled _de novo_ transcriptome for the hydrothermal vent crab, _Bythograea thermydron_. Carolyn built this transcriptome using four tissue types from two individual crabs from the East Pacific Rise (9N). We don't know much about parasites at vents, but we know parasites are very very common in other ecosystems, so let's search our transcriptome for contigs matching a common haplosporidian parasite to see if we can find it in the depths.
+
+Start your srun before performing any analysis:
+```
+srun -p compute --time=1:00:00 --ntasks-per-node=1 --mem=20gb --pty bash
+```
+and 
+```
+mamba activate blast
+```
+
+Make sure that you are in your user directory and clone this repo. Navigate inside the Lab_BLAST folder
 
 ## Build a BLAST database of your "reference" sequences
 
