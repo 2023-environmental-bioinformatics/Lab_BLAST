@@ -66,7 +66,13 @@ Some useful flags:
 | -outfmt 6 | Creates tabular output file (can be further customized by changing number, etc.) eg, -outfmt "6 std stitle" prints default fields plus full sequence title |
 | -task | blastn (default), blastn-short, megablast, dc-megablast |
 | -num_alignments | Only prints top X alignments |
-| -evalue | Maximum e-value to return hits (default: 10, preferred: 1e-3 or more stringent) |
+| -evalue* | Maximum e-value to return hits (default: 10, preferred: 1e-3 or more stringent) |
+
+*The Expect value (E) is a parameter that describes the number of hits one can “expect” to see by chance when searching a database of a particular size. It decreases exponentially as the Score (S) of the match increases. Essentially, the E value describes the random background noise. For example, an **E value of 1 assigned to an alignment means that in a database of the same size one expects to see 1 match with a similar score, or higher, simply by chance**.
+
+The lower the E-value the more “significant” the match is. However, keep in mind that virtually identical short alignments have relatively high E values. This is because the calculation of the E value takes into account the length of the query sequence. These high E values make sense because shorter sequences have a higher probability of occurring in the database purely by chance. For more details please see the calculations in the BLAST Course.
+
+The Expect value can also be used as a convenient way to create a significance threshold for reporting results. You can change the Expect value threshold on most BLAST search pages. When the Expect value is increased from the default value of 0.05, a larger list with more low-scoring hits can be reported.
 
 &nbsp;  
 
