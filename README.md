@@ -14,7 +14,7 @@ Before starting the creation of the environment, **do not forget**:
   
 
   
-Get a fresh new conda environment set up for blasting:
+Get a fresh new blast environment:
 
 ```
 mamba create --name blast
