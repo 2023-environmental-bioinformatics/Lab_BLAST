@@ -28,7 +28,7 @@ For now, though, we are going to ask a pretty simple question: which of the gene
 
 Start your srun before performing any analysis:
 ```
-srun -p scavenger --time=1:00:00 --ntasks-per-node=1 --mem=20gb --pty bash
+srun -p scavenger --time=2:00:00 --ntasks-per-node=1 --mem=20gb --pty bash
 ```
 and 
 ```
