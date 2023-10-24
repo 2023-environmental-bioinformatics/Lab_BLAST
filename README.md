@@ -76,4 +76,4 @@ The Expect value can also be used as a convenient way to create a significance t
 
 &nbsp;  
 
-> Play around with these parameters for a few minutes, and use your command-line skills to parse the output. How many of your "crab" sequences do you think are really microsporidian parasite sequences?
+> In small groups, play around with these parameters for a few minutes, and use your command-line skills to parse the output. How many of your "crab" sequences do you think are really microsporidian parasite sequences?
